@@ -3,22 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>JSD7 STORE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <form>
+  <body class="bg-gray-100 px-16 py-6">
+    <!--#####PRODUCT FORM#####-->
+    <h1 class="text-[44px] font-bold text-center">Shopping Cart 🛒</h1>
+    <h3 class="text-[24px] mt-5 font-bold">Add Item for selection</h3>
+    <form action="" id="form" class="flex pt-5 gap-4" justify-between>
       <div>
-        <h1 class="heading">Shopping Cart</h1>
-        <h3 class="item">Add Item for selection</h3>
-        <span>Product Name:</span>
-        <input type="text" />
-        <span>Price:</span> <input type="number" />
-        <span>Image:</span>
-        <input type="url" name="imageURL" id="imageURL" required />
-        <button>Create Product</button>
+        <span>Product Name :</span>
+        <input
+          id="product_name"
+          type="text"
+          class="border border-gray-300 rounded-md"
+        />
       </div>
+      <div>
+        <span>Price :</span>
+        <input
+          type="number"
+          id="price"
+          min="0"
+          step="1"
+          class="border border-gray-300 rounded-md w-44"
+        />
+      </div>
+      <div>
+        <span for="img_url"
+          >Image :
+          <input
+            type="url"
+            id="img_url"
+            class="border border-gray-300 rounded-md"
+          />
+        </span>
+      </div>
+      <button
+        type="submit"
+        class="bg-blue-500 px-3 text-white rounded-md hover:bg-blue-600 hover:ring hover:ring-blue-300"
+      >
+        Create Product
+      </button>
     </form>
+    <!--#####PRODUCT DASHBOARD#####-->
+    <section
+      id="dashboardsection"
+      class="mt-6 max-w-md mx-auto space-y-4 sr"
+    ></section>
+    <button
+      id="addbtn"
+      class="bg-green-500 px-4 text-white rounded-md hover:bg-green-600 hover:ring hover:ring-green-300"
+    >
+      Add to Cart
+    </button>
+    <section id="cart" class="mt-6 max-w-md mx-auto space-y-4"></section>
+    <div id="btnCal"></div>
+
+    <!--#####HAVE TO PAY #####-->
+    <div id="total"></div>
     <script src="main.js"></script>
   </body>
 </html>
