@@ -75,7 +75,6 @@ function dp_cart(cart) {
   cart.forEach((product) => {
     const div = document.createElement("div");
     div.className = "items-center bg-white p-4 rounded-lg shadow-lg";
-
     div.innerHTML = `
      <input type="checkbox" class="sr-only w-5 h-5 text-2xl accent-rose-600" data-id="${product.id}" onchange="calculateSelector(event)">
      <img src="${product.img_url}" alt="${product.product_name} class="w-full aspect-[4/3] rounded-md mb-4 object-cover">
@@ -90,38 +89,27 @@ function dp_cart(cart) {
      type="submit"
      id="${product.id}"
      onclick="removeCard(${product.id})"
-     class="bg-blue-500 px-4 text-white rounded-md hover:bg-blue-600 hover:ring hover:ring-blue-300 py-4 mt-2"
+     class="bg-[#FF0000] px-4 text-white rounded-md hover:bg-[#ce4141] hover:ring hover:ring-[#000000] py-4 mt-2"
    >Remove
    </button>
      </div>
      `;
     displayDiv.appendChild(div);
   });
+
   const btnDiv = document.getElementById("btnCal");
-  btnDiv.innerHTML = `<button id="cfp" onclick="calulateBtn()" class="bg-gray-500 px-4 text-white rounded-md hover:bg-gray-600 hover:ring hover:ring-gray-300">Calculate Final Price</button>`;
+  btnDiv.innerHTML = `<button id="cfp" onclick="calulateBtn()" class="bg-[#454545] px-10 py-3 text-white rounded-md hover:bg-[#B3B3B3] hover:ring hover:ring-[#A9A9A9]">Calculate Final Price</button>`;
 
   const totalDiv = document.getElementById("total");
-  totalDiv.innerHTML = `<h2 id="total" class="text-xl mt-3">You have to pay:</h2>`;
+  totalDiv.innerHTML = `<h2 id="total" class="text-[24px] font-bold mt-3 pt-8">💰You have to pay :</h2>`;
 }
 
 function removeCard(productId) {
   cart = cart.filter((product) => product.id !== productId);
   dp_cart(cart);
 }
-// function calculateSelector(event) {
-//   const checkbox = event.target;
-//   const checkboxId = parseInt(checkbox.getAttribute("data-id"));
-//   const product = products.find((product) => product.id === checkboxId);
-
-//   if (checkbox.checked) {
-//     product.checked = true;
-//   } else {
-//     product.checked = false;
-//   }
-// }
 
 function calulateBtn() {
-  // cart = products.filter((product) => product.checked && product.id !== -1);
   calculateFinal(cart);
 }
 
@@ -130,6 +118,7 @@ function calculateFinal(cart) {
   cart.forEach((product) => {
     sum += parseFloat(product.price);
   });
+
   const totalPrice = document.getElementById("total");
-  totalPrice.textContent = `You have to pay: ${sum.toFixed(2)} $`;
+  totalPrice.textContent = `💰You have to pay : ${sum.toFixed(2)} $`;
 }
