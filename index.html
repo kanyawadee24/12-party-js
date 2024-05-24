@@ -6,12 +6,16 @@
     <title>JSD7 STORE</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100 px-16 py-6">
+  <body class="bg-[#FCDEE1] px-16 py-6">
     <!--#####PRODUCT FORM#####-->
-    <h1 class="text-[44px] font-bold text-center">Shopping Cart 🛒</h1>
-    <h3 class="text-[24px] mt-5 font-bold">Add Item for selection</h3>
+    <h1 class="text-[58px] font-bold text-center font-sans text-[#413D3C]">
+      Shopping Cart 🛒
+    </h1>
+    <h3 class="text-[32px] mt-5 font-bold text-[#413D3C]">
+      Add Item for selection
+    </h3>
     <form action="" id="form" class="flex pt-5 gap-4" justify-between>
-      <div>
+      <div class="text-xl text-[#413D3C]">
         <span>Product Name :</span>
         <input
           id="product_name"
@@ -19,7 +23,7 @@
           class="border border-gray-300 rounded-md"
         />
       </div>
-      <div>
+      <div class="text-xl text-[#413D3C]">
         <span>Price :</span>
         <input
           type="number"
@@ -29,7 +33,7 @@
           class="border border-gray-300 rounded-md w-44"
         />
       </div>
-      <div>
+      <div class="text-xl text-[#413D3C]">
         <span for="img_url"
           >Image :
           <input
@@ -51,13 +55,14 @@
       id="dashboardsection"
       class="mt-6 max-w-md mx-auto space-y-4 sr"
     ></section>
+    <!--#####PRODUCT FORM#####-->
     <button
       id="addbtn"
       class="bg-green-500 px-4 text-white rounded-md hover:bg-green-600 hover:ring hover:ring-green-300"
     >
       Add to Cart
     </button>
-    <section id="cart" class="mt-6 max-w-md mx-auto space-y-4"></section>
+    <section id="dp_cart" class="mt-6 max-w-md mx-auto space-y-4"></section>
     <div id="btnCal"></div>
 
     <!--#####HAVE TO PAY #####-->
